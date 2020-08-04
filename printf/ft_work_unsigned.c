@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_unsigned.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 20:10:34 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/04 14:47:52 by tredtusk         ###   ########.fr       */
+/*   Updated: 2020/08/04 19:20:33 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,41 +46,40 @@ static char		*ft_itoa_unsigned(unsigned int num)
 	return (num_str);
 }
 
-static int		ft_work_flag_unsigned(char *u_str, t_flag flag)
+static int		ft_work_flag_unsigned(char *unsig_str, t_flag flag)
 {
 	int			len;
 
 	len = 0;
 	if (flag.minus == 1)
-		len += ft_write_int(flag, u_str);
-	if (flag.dot >= 0 && (size_t)flag.dot < ft_strlen(u_str))
-		flag.dot = ft_strlen(u_str);
+		len += ft_write_int(flag, unsig_str);
+	if (flag.dot >= 0 && (size_t)flag.dot < ft_strlen(unsig_str))
+		flag.dot = ft_strlen(unsig_str);
 	if (flag.dot >= 0)
 		len += ft_work_width_space(flag.width - flag.dot);
 	else
 	{
 		if (flag.zero == 1)
-			len += ft_work_width_zero(flag.width - ft_strlen(u_str));
+			len += ft_work_width_zero(flag.width - ft_strlen(unsig_str));
 		else
-			len += ft_work_width_space(flag.width - ft_strlen(u_str));
+			len += ft_work_width_space(flag.width - ft_strlen(unsig_str));
 	}
 	if (flag.minus == 0)
-		len += ft_write_int(flag, u_str);
+		len += ft_write_int(flag, unsig_str);
 	return (len);
 }
 
 int				ft_work_unsigned(t_flag flag, unsigned int num)
 {
 	int			len;
-	char		*u_str;
+	char		*unsig_str;
 
 	len = 0;
-	//num = (unsigned int)(4294967296 + num);
 	if (flag.dot == 0 && num == 0)
 		return (ft_work_width_space(flag.width));
-	if (!(u_str = ft_itoa_unsigned(num)))
+	if (!(unsig_str = ft_itoa_unsigned(num)))
 		return (-1);
-	len = ft_work_flag_unsigned(u_str, flag);
-	free(u_str);
+	len = ft_work_flag_unsigned(unsig_str, flag);
+	free(unsig_str);
 	return (len);
 }

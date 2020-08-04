@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/04 18:07:33 by tredtusk          #+#    #+#             */
+/*   Updated: 2020/08/04 19:07:55 by tredtusk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -7,11 +17,12 @@ int			ft_isdigit(int c)
 	return (c >= '0' && c <= '9');
 }
 
-int			ft_toupper(int c)
+int		ft_toupper(int ch)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - ('z' - 'Z'));
-	return (c);
+	if (ch >= 'a' && ch <= 'z')
+		return (ch - 32);
+	else
+		return (ch);
 }
 
 static int	ft_len(long long nb)
@@ -62,24 +73,18 @@ char		*ft_itoa(long long n)
 
 char		*ft_strdup(const char *src)
 {
-	int		i;
-	char	*dest;
+	int		n;
+	char	*s;
 
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	dest = (char*)malloc(sizeof(*src) * (i + 1));
-	if (dest == NULL)
+	n = 0;
+	while (src[n])
+		n++;
+	if (!(s = (char *)malloc(sizeof(*src) * (n + 1))))
 		return (NULL);
-	else
+	while (n >= 0)
 	{
-		i = 0;
-		while (src[i] != '\0')
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-		return (dest);
+		s[n] = src[n];
+		n--;
 	}
+	return (s);
 }

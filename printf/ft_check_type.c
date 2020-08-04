@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_line_work.c                                     :+:      :+:    :+:   */
+/*   ft_check_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 20:10:40 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/04 15:32:14 by tredtusk         ###   ########.fr       */
+/*   Updated: 2020/08/04 19:21:37 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_line_work(va_list point, t_flag flag, int c)
+int		ft_check_type(va_list point, t_flag flag, int c)
 {
 	int	len;
 
 	len = 0;
 	if (c == 'c')
-		len = ft_write_char(va_arg(point, int), flag);		//	вынести в отдельный файл
+		len = ft_write_char(va_arg(point, int), flag);		//	pereneceno в отдельный файл
 	else if (c == 's')
 		len = ft_work_string(va_arg(point, char *), flag);
 	else if (c == 'p')

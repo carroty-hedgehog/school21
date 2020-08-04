@@ -26,8 +26,8 @@ int				ft_flag_dot(const char *save,
 				va_list point, t_flag *flag, int len);
 t_flag			ft_flag_width(va_list point, t_flag flag);
 t_flag			ft_flag_digit(const char *save, t_flag flag, int *i);
-int				ft_line_work(va_list point, t_flag flag, int c);
-int				ft_distribution(va_list point,
+int				ft_check_type(va_list point, t_flag flag, int c);
+int				ft_parser(va_list point,
 				const char *save, int i, int len);
 char			*ft_itoa_hex(unsigned long long num);
 int				ft_work_width_space(int width);

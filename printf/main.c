@@ -5,8 +5,8 @@
 int main()
 {
     printf("___________Test 1___________\n");
-    printf("printf:    Test1\n");
-    ft_printf("ft_printf: Test1\n");
+    printf("printf:    school\n");
+    ft_printf("ft_printf: school\n");
 
     int a;
     printf("___________Test 2___________\n");
@@ -106,15 +106,32 @@ int main()
     printf("printf:    %X\n", -1235);
     ft_printf("ft_printf: %X\n", -1235);
 
-    // printf("___________Test 21___________\n");
-    // printf("printf:    %X\n", LONG_MAX);
-    // ft_printf("ft_printf: %X\n", LONG_MAX);
+    //from slaka
+    // printf("___________Test 23___________\n");
+    // printf(“%-20% %%\n”,5);
+    // ft_printf("%-20% %%\n,5”);
 
-    // printf("___________Test 21___________\n");
-    // printf("printf:    %X\n", LONG_MIN);
-    // ft_printf("ft_printf: %X\n", LONG_MIN);
+    printf("___________Test 24___________\n");
+    printf("%9.1s\n", NULL);
+    ft_printf("%9.1s\n", NULL);
 
+
+    printf("___________Test 25___________\n");
+    printf("%%\n");
     ft_printf("%%\n");
+
+    printf("___________Test 26___________\n");
+    printf("%*.*i\n", 19, 14, -42);
+    ft_printf("%*.*i\n", 19, 14, -42);
+
+    printf("___________Test 27___________\n");
+    printf("%*.*d\n", 4, 3, -12);
+    ft_printf("%*.*d\n", 4, 3, -12);
+
+    printf("___________Test 28__________\n");
+    printf("%0*.*i\n", 2, 1, 8);
+    ft_printf("%0*.*i\n", 2, 1, 8);
+
 
     // Проверка на утечку памяти:
     // valgrind -v --tool=memcheck --leak-check=yes ./test

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_work_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 20:10:21 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/04 14:42:50 by tredtusk         ###   ########.fr       */
+/*   Updated: 2020/08/04 19:15:58 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ int				ft_work_hex(unsigned int num, t_flag flag, int bigorsmall)
 	char		*hex_str;
 
 	len = 0;
-	//num = (unsigned int)(4294967296 + num);
 	if (flag.dot == 0 && num == 0)
 		return (ft_work_width_space(flag.width));
 	if (!(hex_str = ft_itoa_hex(num)))

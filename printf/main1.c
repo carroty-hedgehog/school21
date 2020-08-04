@@ -169,7 +169,7 @@ int main()
 
     static unsigned int		mx_u = 235;
     static char				mx_c = 'G';
-    static char			   *mx_s = "Hello, World!";
+    static char			   *mx_s = "Hello, neighbour!";
     static int				mx_i = 42;
     
     printf("  %u    %c    %X    %x    %p    %s  |\n", mx_u, mx_c, mx_u, mx_u, &mx_i, mx_s);

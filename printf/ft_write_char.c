@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_write_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/04 18:07:53 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/04 19:24:56 by tredtusk         ###   ########.fr       */
+/*   Created: 2020/08/04 18:23:01 by tredtusk          #+#    #+#             */
+/*   Updated: 2020/08/04 18:24:13 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "ft_printf.h"
 
-int				ft_printf(const char *input, ...)
+int		ft_write_char(char c, t_flag flag)
 {
-	va_list		point;
-	int			len;
-	int			i;
+	int	len;
 
-	i = -1;
 	len = 0;
-	if (input == NULL)
-		return (-1);
-	va_start(point, input);
-	len = ft_parser(point, input, i, len);
-	va_end(point);
+	if (flag.minus == 1)
+		len += ft_putchar(c);
+	len += ft_work_width_space(flag.width - 1);
+	if (flag.minus == 0)
+		len += ft_putchar(c);
 	return (len);
 }

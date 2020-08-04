@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 20:10:43 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/04 14:39:02 by tredtusk         ###   ########.fr       */
+/*   Updated: 2020/08/04 19:24:25 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ static t_flag		ft_flag_begin(void)
 	return (flag);
 }
 
-static int			ft_check_type_list(const char c)
+static int			ft_check_all_type(const char c)
 {
 	return ((c == 'c') || (c == 's') || (c == 'p') || (c == 'd') || (c == 'i')
 	|| (c == 'u') || (c == 'x') || (c == 'X') || (c == '%'));
 }
 
-static int			ft_check_flag_list(const char c)
+static int			ft_check_all_flag(const char c)
 {
 	return ((c == '-') || (c == '0') || (c == '.') || (c == '*'));
 }
@@ -43,7 +43,7 @@ static int			ft_flag_parser(const char *save,
 	while (save[i])
 	{
 		if ((!ft_isdigit(save[i])) &&
-		(!ft_check_type_list(save[i])) && (!ft_check_flag_list(save[i])))
+		(!ft_check_all_type(save[i])) && (!ft_check_all_flag(save[i])))
 			break ;
 		if (save[i] == '0' && flag->width == 0 && flag->minus == 0)
 			flag->zero = 1;
@@ -55,7 +55,7 @@ static int			ft_flag_parser(const char *save,
 			*flag = ft_flag_width(point, *flag);
 		if (ft_isdigit(save[i]))
 			*flag = ft_flag_digit(save, *flag, &i);
-		if (ft_check_type_list(save[i]))
+		if (ft_check_all_type(save[i]))
 		{
 			flag->type = save[i];
 			break ;
@@ -65,7 +65,7 @@ static int			ft_flag_parser(const char *save,
 	return (i);
 }
 
-int					ft_distribution(va_list point,
+int					ft_parser(va_list point,
 					const char *save, int i, int len)
 {
 	t_flag			flag;
@@ -78,7 +78,7 @@ int					ft_distribution(va_list point,
 			i = ft_flag_parser(save, ++i, point, &flag);
 			if (flag.type != 0)
 			{
-				flag.err = ft_line_work(point, flag, flag.type);
+				flag.err = ft_check_type(point, flag, flag.type);
 				if (flag.err == -1)
 					return (-1);
 				len += flag.err;

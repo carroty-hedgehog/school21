@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_write.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 20:10:36 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/03 20:10:56 by tredtusk         ###   ########.fr       */
+/*   Updated: 2020/08/04 18:17:41 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,6 @@ int		ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
-}
-
-int		ft_write_char(char c, t_flag flag)
-{
-	int	len;
-
-	len = 0;
-	if (flag.minus == 1)
-		len += ft_putchar(c);
-	len += ft_work_width_space(flag.width - 1);
-	if (flag.minus == 0)
-		len += ft_putchar(c);
-	return (len);
 }
 
 int		ft_write_string(char *str, int end)
