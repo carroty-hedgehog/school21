@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/04 18:07:33 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/04 19:07:55 by tredtusk         ###   ########.fr       */
+/*   Updated: 2020/08/05 13:26:09 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			ft_isdigit(int c)
 	return (c >= '0' && c <= '9');
 }
 
-int		ft_toupper(int ch)
+int			ft_toupper(int ch)
 {
 	if (ch >= 'a' && ch <= 'z')
 		return (ch - 32);

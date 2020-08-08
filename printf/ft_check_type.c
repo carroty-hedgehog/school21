@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_type.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tredtusk <tredtusk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/03 20:10:40 by tredtusk          #+#    #+#             */
-/*   Updated: 2020/08/04 19:21:37 by tredtusk         ###   ########.fr       */
+/*   Updated: 2020/08/05 13:51:21 by tredtusk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_check_type(va_list point, t_flag flag, int c)
 
 	len = 0;
 	if (c == 'c')
-		len = ft_write_char(va_arg(point, int), flag);		//	pereneceno в отдельный файл
+		len = ft_write_char(va_arg(point, int), flag);
 	else if (c == 's')
 		len = ft_work_string(va_arg(point, char *), flag);
 	else if (c == 'p')

@@ -50,9 +50,9 @@ int main()
     printf("printf:    %-*.5d|\n", 7, 5);
     ft_printf("ft_printf: %-*.5d|\n", 7, 5);
 
-    printf("________________________________Test 14________________________________\n" );
-    printf("printf:    %0.3d|\n", 5);
-    ft_printf("ft_printf: %0.3d|\n", 5);
+    // printf("________________________________Test 14________________________________\n" );
+    // printf("printf:    %0.3d|\n", 5);
+    // ft_printf("ft_printf: %0.3d|\n", 5);
 
     // printf("________________________________Test 15________________________________\n" );
     // printf("printf:    %0.3s|\n", "asdfghj");
@@ -70,13 +70,13 @@ int main()
     // printf("printf:    %0*s|\n", 13, "asdfghj");
     // ft_printf("ft_printf: %0*s|\n", 13, "asdfghj");
 
-    printf("________________________________Test 19________________________________\n" );
-    printf("printf:    %--10s|\n", "asdfghj");
-    ft_printf("ft_printf: %--10s|\n", "asdfghj");
+    // printf("________________________________Test 19________________________________\n" );
+    // printf("printf:    %--10s|\n", "asdfghj");
+    // ft_printf("ft_printf: %--10s|\n", "asdfghj");
 
-    printf("________________________________Test 20________________________________\n" );
-    printf("printf:    %00d|\n", 25);
-    ft_printf("ft_printf: %00d|\n", 25);
+    // printf("________________________________Test 20________________________________\n" );
+    // printf("printf:    %00d|\n", 25);
+    // ft_printf("ft_printf: %00d|\n", 25);
 
     // printf("________________________________Test 21_______________________________\n" );
     // printf("printf:    %..d|\n", 25);

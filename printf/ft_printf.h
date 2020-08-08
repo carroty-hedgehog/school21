@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tredtusk <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/08/05 13:22:16 by tredtusk          #+#    #+#             */
+/*   Updated: 2020/08/06 14:24:31 by tredtusk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
@@ -32,7 +42,7 @@ int				ft_parser(va_list point,
 char			*ft_itoa_hex(unsigned long long num);
 int				ft_work_width_space(int width);
 int				ft_work_string(char *str, t_flag flag);
-int				ft_work_hex(unsigned int num, t_flag flag, int lowercase);
+int				ft_work_hex(unsigned int num, t_flag flag, int bigorsmall);
 int				ft_work_width_zero(int width);
 int				ft_work_int(t_flag flag, long long num);
 int				ft_work_percent(t_flag flag);
@@ -44,7 +54,7 @@ int				ft_write_string(char *str, int end);
 int				ft_write_int(t_flag flag, char *num_str);
 size_t			ft_strlen(const char *str);
 int				ft_isdigit(int c);
-int				ft_toupper(int c);
+int				ft_toupper(int ch);
 char			*ft_itoa(long long n);
 char			*ft_strdup(const char *src);
 
