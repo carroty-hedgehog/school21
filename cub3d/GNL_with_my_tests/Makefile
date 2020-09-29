@@ -1,0 +1,16 @@
+C = gcc
+
+# BUFFER_SIZE = BUFFER_SIZE=1044
+BUFFER_SIZE = BUFFER_SIZE=9
+# BUFFER_SIZE = BUFFER_SIZE=1
+# BUFFER_SIZE = BUFFER_SIZE=5
+# BUFFER_SIZE = BUFFER_SIZE=4
+# BUFFER_SIZE = BUFFER_SIZE=6
+# BUFFER_SIZE = BUFFER_SIZE=0
+
+FLAGS = -g -Wall -Wextra -Werror -D 
+SOURCE = main.c get_next_line.c get_next_line_utils.c get_next_line.h
+
+all:
+		$(CC) $(FLAGS) $(BUFFER_SIZE) $(SOURCE)
+
