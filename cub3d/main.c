@@ -63,24 +63,26 @@ chek_file_map(char *name, t_file *all)
 
 	while (all->map.map)
 	{
-		int i;
+		int j;
 
-		i = 0;
+		j = 0;
 
 		while (all->line[j] == ' ')
 			j++;
-		if (all->line[j] == '\0')
-			return(ERROR);
-		while (all->line[j] == '1' || all->line[j] == '0' ||
-		all->line[j] == ' ' || all->line[j] == '2' || all->line[j] == 'N' ||
-		all->line[j] == 'S' || all->line[j] == 'W' || all->line[j] == 'E')
-			j++;
-		if (all->line[j] == '\0')
-			maptrace(all);
-		else
-			return(ERROR);
-
-	}
+		{
+			if(all->line[j] == 'R')
+				time_or_razrehenie();
+			if(all->line[j] == 'N' && all->line[j + 1] == 'O' ||
+				all->line[j] == 'S' && all->line[j + 1] == 'O'
+				all->line[j] == 'W' && all->line[j + 1] == 'E'
+				all->line[j] == 'E' && all->line[j + 1] == 'A'
+				all->line[j] == 'S' && all->line[j + 1] == ' ')
+				time_for_texture();
+			if (all->line[j] == 'F' || all->line[j + 1] == 'C')
+				time_for_floor_and_sky();
+		}
+		j++;
+ 	}
 
 
 }
