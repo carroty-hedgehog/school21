@@ -15,9 +15,9 @@
 # define ERROR   
 
 
-
 typedef struct	s_win
-{
+{   
+    void    *win;
 	int win_x;
     int win_y;
 }				t_win;
@@ -46,14 +46,14 @@ typedef struct		s_sides
 typedef struct	s_img
 {
     void    *mlx;
-    void    *win;
+    
 
-    void    NO_img;
-    void    SO_img;
-    void    WE_img;
-    void    EA_img;
-    void    S_img;
-    void    *img;
+    // void    NO_img;
+    // void    SO_img;
+    // void    WE_img;
+    // void    EA_img;
+    // void    S_img;
+    // void    *img;
 
 }				t_img;
 
@@ -66,11 +66,14 @@ typedef struct	s_mlx
 typedef struct	s_all
 {
 	t_win   win;
-    t_map   *map;
+    t_map   map;
     t_color color;
-    t_img  *img;
-    t_mlx   *mlx;
+    t_img  img;
+    t_mlx   mlx;
     t_sides sides;
+    t_list  list;
+    
+
 
     int				fd;
     char			*line;

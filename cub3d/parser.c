@@ -67,7 +67,7 @@ void    draw_screen(char *name, char **map, void *mlx, void *win)
 				{
 					j = -1;
 					while (++j < 10)
-						mlx_pixel_put(mlx, win, 10 * x + j, 10 * y + i, WHITE);
+						mlx_pixel_put(mlx, win, 10 * x + j, 10 * y + i, RED);
 				}
 				else if (map[y][x] == 'N' || map[y][x] == 'S' || map[y][x] == 'E' || map[y][x] == 'W')
 				{

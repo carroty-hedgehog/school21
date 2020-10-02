@@ -2,10 +2,11 @@
 #include "gnl/get_next_line.h"
 #include "liba/libft.h"
 #include "minilibx_mms/mlx.h"
+#include "cub3d.h"
 
 char	**make_map(t_list **head, int size)
 {
-	char	**map;
+	t_all	all;
 	int 	i;
 	t_list	*tmp;
 
@@ -23,12 +24,11 @@ char	**make_map(t_list **head, int size)
 
 char	**read_map(char *name)
 {
-	int		fd;
-	char 	*line;
+	t_all	all;
 	t_list	*head;
-	char	**map;
+	
 
-	fd = open(name, O_RDONLY);
+	all.fd = open(name, O_RDONLY);
 	line = 0;
 	head = 0;
 
@@ -83,9 +83,7 @@ void	draw_map(char *name, char **map, void *mlx, void *win)
 
 int 	main(int argc, char **argv)
 {
-	void	*mlx;
-	void	*win;
-	char	**map;
+	t_all	all;
 
 	map = 0;
 	mlx = mlx_init();
